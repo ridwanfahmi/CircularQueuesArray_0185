@@ -64,10 +64,43 @@ public:
 	}
 
 	void display() {
+		//cek apakah antrian kosong
+		if (FRONT == -1) {
+			cout << "Queue is empty\n";
+			return;
+		}
 
+		cout << "\nElement in the queue are...\n";
+
+		//jika front <= rear, iterasi dari front hingga rear
+		if (FRONT <= REAR) {
+			while (FRONT <= REAR) {
+				cout << queue_array[FRONT] << " ";
+				FRONT++;
+			}
+			cout << endl;
+		}
+		else {
+			//jika front > rear, iterasi dai front hingga akhir array
+			while (FRONT <= max - 1) {
+				cout << queue_array[FRONT] << " ";
+				FRONT++;
+			}
+
+			FRONT = 0;
+
+			//iterasi dari awal array hingga rear
+			while (FRONT <= REAR) {
+				cout << queue_array[FRONT] << " ";
+				FRONT++;
+
+			}
+			cout << endl;
+		}
 	}
 };
 
 int main() {
-
+	Queues q;
+	
 }
